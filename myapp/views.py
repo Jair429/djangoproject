@@ -6,11 +6,17 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'index.html')
+    title = "Django!!!!!!!!!!!!!"
+    return render(request, 'index.html', {
+        'title': title
+    })
 
 
 def about(request):
-    return render(request, 'about.html')
+    username = "Reymar"
+    return render(request, 'about.html', {
+        'username': username
+    })
 
 
 def hello(request, jugador):
@@ -18,8 +24,11 @@ def hello(request, jugador):
 
 
 def projects(request):
-    projects = list(Project.objects.values())
-    return render(request, 'projects.html')
+    # projects = list(Project.objects.values())
+    projects = Project.objects.all()
+    return render(request, 'project.html', {
+        'projects': projects
+    })
 
 
 def tasks(request):
