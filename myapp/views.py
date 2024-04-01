@@ -26,11 +26,14 @@ def hello(request, jugador):
 def projects(request):
     # projects = list(Project.objects.values())
     projects = Project.objects.all()
-    return render(request, 'project.html', {
+    return render(request, 'projects.html', {
         'projects': projects
     })
 
 
 def tasks(request):
     # task = Task.objects.get(title=title)
-    return render(request, 'task.html')
+    tasks = Task.objects.all()
+    return render(request, 'task.html', {
+        'tasks': tasks
+    })

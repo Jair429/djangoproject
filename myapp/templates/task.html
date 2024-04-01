@@ -1,1 +1,8 @@
 <h1>Task</h1>
+{% for cr7 in tasks %}
+<div>
+  <h1>{{cr7.title}}</h1>
+  <p>{{cr7.description}}</p>
+  <p>Project: {{cr7.project.name}}</p>
+</div>
+{% endfor %}
